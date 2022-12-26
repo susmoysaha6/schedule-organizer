@@ -29,6 +29,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>SCHEDULE ORGANIZER</title>
+      </Head>
       <button onClick={handleGoogle}>Sign In</button>
       <button className='btn' onClick={handleLogOut}>Sign Out</button>
       <Link href='/blog'> Blog</Link>
