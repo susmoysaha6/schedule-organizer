@@ -5,15 +5,10 @@ import AddTodo from './AddTodo';
 import DisplayDoneList from './DisplayDoneList';
 import DisplayTodo from './DisplayTodo';
 
-const Todos = ({ data }) => {
-
+const Todos = () => {
     const { user } = useContext(AuthContext)
-    console.log(data);
-
-
-
     const { data: todos = [], isLoading, refetch } = useQuery({
-        queryKey: ['allSellers'],
+        queryKey: ['todos'],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/todo?email=${user?.email}`);
             const data = await res.json();
@@ -29,7 +24,7 @@ const Todos = ({ data }) => {
         <div className='grid md:grid-cols-2 lg:grid-cols-3 w-11/12 mx-auto my-10 gap-36'>
             <AddTodo refetch={refetch} />
             <DisplayTodo todos={todos} refetch={refetch} />
-            <DisplayDoneList />
+            <DisplayDoneList todos={todos} />
         </div>
     );
 };

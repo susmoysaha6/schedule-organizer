@@ -30,6 +30,7 @@ const AddTodo = ({ refetch }) => {
             .then(data => {
                 console.log(data);
                 refetch();
+                e.target.reset();
             })
 
     }
