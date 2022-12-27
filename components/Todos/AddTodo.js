@@ -4,7 +4,7 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { AuthContext } from '../../contexts/AuthProvider';
 
-const AddTodo = () => {
+const AddTodo = ({ refetch }) => {
     const { user } = useContext(AuthContext);
     const [selected, setSelected] = useState(new Date())
     console.log(selected);
@@ -16,7 +16,8 @@ const AddTodo = () => {
         const todo = {
             task,
             date: format(selected, 'PP'),
-            email: user?.email
+            email: user?.email,
+            status: "pending"
         }
         fetch('http://localhost:5000/todo', {
             method: 'POST',
@@ -26,7 +27,10 @@ const AddTodo = () => {
             body: JSON.stringify(todo)
         })
             .then(res => res.json())
-            .then(data => { console.log(data); })
+            .then(data => {
+                console.log(data);
+                refetch();
+            })
 
     }
     return (
@@ -44,9 +48,9 @@ const AddTodo = () => {
                             }
                         }}
                     />
-                    <textarea className="textarea textarea-bordered my-5 w-full" name='task' required></textarea>
+                    <textarea className="textarea textarea-bordered my-5 w-full mx-auto" name='task' required></textarea>
                     <br />
-                    <button type="submit" className='btn w-full'>Add</button>
+                    <button type="submit" className='btn w-full mx-auto'>Add</button>
                 </div>
             </form>
         </div>
