@@ -35,6 +35,7 @@ export default function Home() {
         <title>SCHEDULE ORGANIZER</title>
       </Head>
       <Banner />
+
       {
         !user ?
           <p>Please login</p>

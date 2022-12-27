@@ -4,8 +4,8 @@ import Schedule from '../../assets/Schedule.png'
 
 const Banner = () => {
     return (
-        <div>
-            <Image src={Schedule} alt='' ></Image>
+        <div >
+            <Image src={Schedule} alt='' height="auto" className='mx-auto' ></Image>
         </div>
     );
 };

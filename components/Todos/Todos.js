@@ -5,7 +5,7 @@ import DisplayTodo from './DisplayTodo';
 
 const Todos = () => {
     return (
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 w-11/12 mx-auto'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 w-11/12 mx-auto my-10 lg:gap-5'>
             <AddTodo />
             <DisplayTodo />
             <DisplayDoneList />
