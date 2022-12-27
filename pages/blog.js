@@ -1,6 +1,8 @@
 import React from 'react';
+import { withProtected } from '../hooks/routes';
+// import { withPublic } from '../hooks/routes';
 
-const blog = () => {
+const Blog = ({ user }) => {
     return (
         <div className='text-center'>
             hi
@@ -8,4 +10,4 @@ const blog = () => {
     );
 };
 
-export default blog;
+export default withProtected(Blog);

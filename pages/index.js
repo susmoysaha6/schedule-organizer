@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
 import Link from 'next/link';
+import Banner from '../components/Banner/Banner';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -28,13 +29,18 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div >
       <Head>
         <title>SCHEDULE ORGANIZER</title>
       </Head>
-      <button onClick={handleGoogle}>Sign In</button>
-      <button className='btn' onClick={handleLogOut}>Sign Out</button>
-      <Link href='/blog'> Blog</Link>
-    </>
+      <Banner />
+      <Link href='/blog'>Blog</Link>
+      {
+        !user ?
+          <p>Please login</p>
+          :
+          <input type="text" className='input' />
+      }
+    </div>
   )
 }
