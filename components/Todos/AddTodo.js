@@ -19,7 +19,7 @@ const AddTodo = ({ refetch }) => {
             email: user?.email,
             status: "pending"
         }
-        fetch('http://localhost:5000/todo', {
+        fetch('https://schedule-organizer-server.vercel.app/todo', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -8,13 +8,13 @@ const DisplayDoneList = ({ todos }) => {
     const { data: doneTodos = [], refetch } = useQuery({
         queryKey: ['doneTodos', todos],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/done?email=${user?.email}`);
+            const res = await fetch(`https://schedule-organizer-server.vercel.app/done?email=${user?.email}`);
             const data = await res.json();
             return data;
         }
     })
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/todo/${id}`, {
+        fetch(`https://schedule-organizer-server.vercel.app/todo/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',

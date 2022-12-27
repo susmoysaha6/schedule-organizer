@@ -10,7 +10,7 @@ const Todos = () => {
     const { data: todos = [], isLoading, refetch } = useQuery({
         queryKey: ['todos'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/todo?email=${user?.email}`);
+            const res = await fetch(`https://schedule-organizer-server.vercel.app/todo?email=${user?.email}`);
             const data = await res.json();
             return data;
         }

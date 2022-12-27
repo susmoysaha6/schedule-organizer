@@ -2,7 +2,7 @@ import React from 'react';
 
 const DisplayTodo = ({ todos, refetch }) => {
     const handleDone = (id) => {
-        fetch(`http://localhost:5000/todo/${id}`, {
+        fetch(`https://schedule-organizer-server.vercel.app/todo/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
