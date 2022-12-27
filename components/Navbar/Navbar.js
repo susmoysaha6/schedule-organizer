@@ -59,12 +59,13 @@ const Navbar = ({ children }) => {
                 </div>
                 {children}
             </div>
-            {/* <div className="drawer-side">
+            <div className="drawer-side">
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 bg-base-100">
+                    <p className="my-5 text-center text-xl font-semibold">SCHEDULE ORGANIZER</p>
                     {menuItems}
                 </ul>
-            </div> */}
+            </div>
         </div>
     );
 };

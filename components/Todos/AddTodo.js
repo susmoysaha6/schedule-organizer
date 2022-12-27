@@ -36,7 +36,7 @@ const AddTodo = ({ refetch }) => {
     }
     return (
         <div>
-            <h1 className='text-3xl font-bold text-center'> ADD TASK</h1>
+            <h1 className='text-3xl font-bold text-center text-blue-800'> ADD TASK</h1>
             <form onSubmit={handleSubmut}  >
                 <div className='w-10/12 mx-auto'>
 
@@ -51,7 +51,7 @@ const AddTodo = ({ refetch }) => {
                     />
                     <textarea className="textarea textarea-bordered my-5 w-full mx-auto" name='task' required></textarea>
                     <br />
-                    <button type="submit" className='btn w-full mx-auto'>Add</button>
+                    <button type="submit" className='btn w-full mx-auto bg-blue-800'>Add</button>
                 </div>
             </form>
         </div>

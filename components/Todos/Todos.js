@@ -21,7 +21,7 @@ const Todos = () => {
     }
     console.log(todos);
     return (
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 w-11/12 mx-auto my-10 gap-36'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 w-11/12 mx-auto my-10 gap-12'>
             <AddTodo refetch={refetch} />
             <DisplayTodo todos={todos} refetch={refetch} />
             <DisplayDoneList todos={todos} />

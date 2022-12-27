@@ -28,14 +28,14 @@ const DisplayDoneList = ({ todos }) => {
     }
     return (
         <div>
-            <h1 className='text-3xl text-center font-bold'>DONE TASK</h1>
+            <h1 className='text-3xl text-center font-bold text-blue-800'>DONE TASK</h1>
 
             {doneTodos?.length ? doneTodos?.map(todo => <div key={todo?._id} className="card my-10 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">{todo?.date}</h2>
                     <p>{todo?.task}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={() => handleDelete(todo._id)} className="btn btn-info">Delete</button>
+                        <button onClick={() => handleDelete(todo._id)} className="btn bg-red-700">Delete</button>
                     </div>
                 </div>
             </div>) : <p className='text-center text-2xl font-semibold my-10 text-red-600'>No done task found</p>}

@@ -23,11 +23,7 @@ export default function Home() {
         console.log(err);
       })
   }
-  const handleLogOut = () => {
-    logOut()
-      .then(() => { })
-      .catch(err => console.error(err))
-  }
+
 
   return (
     <div >
@@ -38,7 +34,10 @@ export default function Home() {
 
       {
         !user ?
-          <p>Please login</p>
+          <div className='flex flex-col'>
+            <p className='text-3xl text-center my-10 font-semibold'>Please login to manage your schedule</p>
+            <button onClick={handleGoogle} className='btn w-1/2 mx-auto bg-blue-800 '>Sing In</button>
+          </div>
           :
           <Todos />
       }
