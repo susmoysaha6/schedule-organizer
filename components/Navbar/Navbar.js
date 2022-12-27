@@ -20,11 +20,20 @@ const Navbar = ({ children }) => {
             .then(() => { })
             .catch(err => console.error(err))
     }
-
+    console.log(user);
     const menuItems = <React.Fragment>
         {
             user && user?.uid ?
-                <button className="btn bg-blue-800" onClick={handleLogOut}>Sign Out</button>
+                <div className="flex flex-col lg:flex-row lg:items-center">
+                    <div className="avatar mx-auto lg:mr-5 my-2">
+                        <div className="w-12 rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
+                            <img src={user?.photoURL
+                            } alt="" />
+                        </div>
+                    </div>
+                    <p className="lg:mr-5 font-bold text-center my-2">{user?.displayName}</p>
+                    <button className="btn bg-blue-800" onClick={handleLogOut}>Sign Out</button>
+                </div>
                 :
                 <button className="btn bg-blue-800" onClick={handleGoogle}>Sign In</button>
         }

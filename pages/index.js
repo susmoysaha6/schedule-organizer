@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
 import Link from 'next/link';
 import Banner from '../components/Banner/Banner';
+import Todos from '../components/Todos/Todos';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -34,12 +35,11 @@ export default function Home() {
         <title>SCHEDULE ORGANIZER</title>
       </Head>
       <Banner />
-      <Link href='/blog'>Blog</Link>
       {
         !user ?
           <p>Please login</p>
           :
-          <input type="text" className='input' />
+          <Todos />
       }
     </div>
   )
